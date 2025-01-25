@@ -1,6 +1,24 @@
 const express=require("express")
 const app=express()
 
+ app.get("/user",(req,res)=>{
+    res.send({
+        message:"user fetch successfully"
+    })
+ })
+
+ app.post("/user",(req,res)=>{
+    res.send({
+        message:"create user successfully"
+    })
+ })
+ app.delete("/user",(req,res)=>{
+    res.send({
+        message:"delete user successfully"
+    })
+ })
+
+
 
 app.use("/test",(req,res)=>{
     res.send({
@@ -10,12 +28,7 @@ app.use("/test",(req,res)=>{
     
 })
 
-app.use("/user",(req,res)=>{
-    res.send({
-        success:true,
-        message:"user created successfully"
-    })
-})
+
 app.listen(8080,()=>{
     console.log("server started");
     
